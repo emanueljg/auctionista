@@ -16,7 +16,7 @@
             enable = mkEnableOption self.description;
           };
 
-          config = {
+          config = mkIf cfg.enable {
 
             # setup db stuff
             services.mysql = {
