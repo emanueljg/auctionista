@@ -5,6 +5,9 @@
 
   outputs = { self, nixpkgs, ... }: {
     nixosModules = let name = "auctionista"; in {
+      # why it can't rec properly I don't know
+      # have to reach it through self.nixosModules...
+      default = self.nixosModules.${name}; 
       ${name} = (
         { config, lib, ... }: with lib; let 
           cfg = config.services.${name}; in {
