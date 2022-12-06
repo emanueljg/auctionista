@@ -19,7 +19,9 @@
           config = mkIf cfg.enable {
             users.users.${name} = {
               isSystemUser = true;
+              group = name;
             };
+            user.groups.${name} = { };
 
             # setup db stuff
             services.mysql = {
