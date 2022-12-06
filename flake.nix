@@ -21,7 +21,7 @@
               isSystemUser = true;
               group = name;
             };
-            user.groups.${name} = { };
+            users.groups.${name} = { };
 
             # setup db stuff
             services.mysql = {
