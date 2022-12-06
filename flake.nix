@@ -30,12 +30,21 @@
               ensureDatabases = [ name ];
 
               # create db user and give priveleges
-              ensureUsers = [{
-                inherit name;
-                ensurePermissions = {
-                  "${name}.*" = "ALL PRIVILEGES";
-                };
-              }];
+              ensureUsers = [
+                {
+                  inherit name;
+                  ensurePermissions = {
+                    "${name}.*" = "ALL PRIVILEGES";
+                  };
+                }
+
+                {
+                  name = "ejg";
+                  ensurePermissions = {
+                    "${name}.*" = "ALL PRIVILEGES";
+                  };
+                }
+              ];
             };
           };
         }
