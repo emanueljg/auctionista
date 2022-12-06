@@ -17,6 +17,9 @@
           };
 
           config = mkIf cfg.enable {
+            users.users.${name} = {
+              isSystemUser = true;
+            }
 
             # setup db stuff
             services.mysql = {
