@@ -9,7 +9,7 @@
       # have to reach it through self.nixosModules...
       default = self.nixosModules.${name}; 
       ${name} = (
-        { config, lib, ... }: with lib; let 
+        { config, pkgs, lib, ... }: with lib; let 
           cfg = config.services.${name}; in {
 
           options.services.${name} = {
@@ -19,6 +19,7 @@
           config = mkIf cfg.enable {
             users.users.${name} = {
               isSystemUser = true;
+              shell = mkForce pkgs.bash; 
               group = name;
             };
             users.groups.${name} = { };
