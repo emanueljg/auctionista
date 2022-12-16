@@ -6,7 +6,6 @@ For running it:
 - Python 3.x (tested on 3.11.0)
 - some python packages: `pip install -r requirements.txt`
 - mysql 8.x
-
 For testing it:
 - POSIX sh
 - curl
@@ -46,7 +45,8 @@ Login a user.
 Parameters: email, password
 
 ### /logout (GET)
-*login required*
+*login required
+*
 Logout a user.
 
 Yes, it's weird that this is a GET-method --
@@ -55,18 +55,21 @@ that's how the flask-login readme quickstart
 does its logout route.
 
 ### /whoami (GET)
-*login required*
+*login required
+*
 Show the current logged-in user's username
 
 ### /auction_objects (POST)
-*login required*
+*login required
+*
 Create an auction object.
 
 Paramaters: title, description, date_end
 (date_end accepts most datetime-y formatted things)
 
 ### /auction_objects/<id>/bid (POST)
-*login required*
+*login required
+*
 Bid on the auction object with id `id`.
 
 Parameters: amount
