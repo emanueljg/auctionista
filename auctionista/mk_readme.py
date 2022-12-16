@@ -7,7 +7,7 @@ def mk_endpoint_md(route, methods, func):
     # that any decorated route is decorated because it's a protected view.
     # Ideally, we'd check this with reflection. But I'm lazy right now.
     if hasattr(func, '__wrapped__'):
-        s += '\n*login required\n*'
+        s += '\n*login required*\n'
 
     s += f'\n{cleandoc(func.__doc__)}'
 
