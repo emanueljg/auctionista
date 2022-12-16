@@ -4,7 +4,7 @@
 
 foobar_user='{"email": "foo@bar.com", "password": "password123"}'
 foobar_user_bad_pass='{"email": "foo@bar.com", "password": "wrong"}'
-foobar2_user='{"email": "foo2@bar.com", "password". "password123"}'
+foobar2_user='{"email": "foo2@bar.com", "password": "password123"}'
 
 req_foobar_register () {
     req "register" "POST" "$foobar_user" 
@@ -83,7 +83,7 @@ test_logout() {
 test_unauthorized_access_post_logout () {
     teardown
     quiet req_foobar_login
-    quiet req "logout" "GET" &> /dev/null
+    quiet req "logout" "GET"
     unit \
         "Test unauthorized access post-logout" \
         "$(req "whoami" "GET")" \

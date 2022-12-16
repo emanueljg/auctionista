@@ -3,8 +3,7 @@
 # Shellscript for testing the auctionista flask API.
 # 
 # Requirements: cURL and jq.
-# The program aims to target POSIX sh but might by
-# accident use bash-only syntax.
+# The program aims to target POSIX sh.
 #
 # All testing logic, all buildup and teardown,
 # resides in this shellcode, NOT the main python code. 
@@ -67,11 +66,11 @@ unit () {
     OUT="---${TEST_NAME}---\n"
 
     if [ "$GOT" = "$EXPECTED" ]; then
-        OUT+="SUCCESS!"
+        OUT="${OUT}SUCCESS!"
     else
-        OUT+="FAILURE."
-        OUT+="\nexpected: $EXPECTED"
-        OUT+="\ngot: $GOT"
+        OUT="${OUT}FAILURE."
+        OUT="${OUT}\nexpected: $EXPECTED"
+        OUT="${OUT}\ngot: $GOT"
     fi
 
     printf -- "${OUT}\n"

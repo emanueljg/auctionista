@@ -18,3 +18,5 @@ test_create_auction_object
 test_show_auction_object
 test_list_auction_objects
 test_bid_on_new_auction_object
+test_same_bidder_on_auction_object
+test_too_low_bid_on_auction_object
