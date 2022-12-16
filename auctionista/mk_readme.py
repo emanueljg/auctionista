@@ -1,7 +1,11 @@
 import app
 from inspect import cleandoc
 def mk_endpoint_md(route, methods, func):
-    s = f'### {route} ({", ".join(methods)})'
+    route_str = route \
+                .replace('<', r'\<') \
+                .replace('>', r'\>')
+    s = f'### {route_str}'
+    s += f' ({", ".join(methods)})'
 
     # we're going to make the naive assumption
     # that any decorated route is decorated because it's a protected view.

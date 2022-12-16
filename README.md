@@ -6,7 +6,9 @@ For running it:
 - Python 3.x (tested on 3.11.0)
 - some python packages: `pip install -r requirements.txt`
 - mysql 8.x
+
 For testing it:
+
 - POSIX sh
 - curl
 - jq
@@ -31,7 +33,7 @@ For testing it:
 ### /auction_objects (GET)
 Gets a list of auction objects.
 
-### /auction_objects/<id> (GET)
+### /auction_objects/\<id\> (GET)
 Get an auction object with id `id`.
 
 ### /register (POST)
@@ -67,7 +69,7 @@ Create an auction object.
 Paramaters: title, description, date_end
 (date_end accepts most datetime-y formatted things)
 
-### /auction_objects/<id>/bid (POST)
+### /auction_objects/\<id\>/bid (POST)
 *login required*
 
 Bid on the auction object with id `id`.

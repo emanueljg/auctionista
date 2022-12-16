@@ -6,7 +6,9 @@ For running it:
 - Python 3.x (tested on 3.11.0)
 - some python packages: `pip install -r requirements.txt`
 - mysql 8.x
+
 For testing it:
+
 - POSIX sh
 - curl
 - jq
